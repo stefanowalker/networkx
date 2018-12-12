@@ -723,6 +723,7 @@ def generate_gml(G, stringizer=None):
     ignored_keys = {'id', 'label'}
     for node, attrs in G.nodes.items():
         yield '  node ['
+        node = str(node) #change
         yield '    id ' + str(node_id[node])
         for line in stringize('label', node, (), '    '):
             yield line
